@@ -10,7 +10,7 @@ public class Baekjoon1002 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         int T = Integer.parseInt(br.readLine());
 
         while (T-- > 0) {
@@ -25,10 +25,10 @@ public class Baekjoon1002 {
             int y2 = Integer.parseInt(st.nextToken());
             int r2 = Integer.parseInt(st.nextToken());
 
-            stringBuilder.append(tangent_point(x1, y1, r1, x2, y2, r2)).append('\n');
+            sb.append(tangent_point(x1, y1, r1, x2, y2, r2)).append('\n');
         }
 
-        System.out.println(stringBuilder);
+        System.out.println(sb);
 
     }
 
@@ -36,7 +36,7 @@ public class Baekjoon1002 {
     public static int tangent_point(int x1, int y1, int r1, int x2, int y2, int r2) {
 
         // 중점 간의 거리
-        int distance_pow = (int) (Math.pow(x2 - x1, 2) * Math.pow(y2 - y1, 2));
+        int distance_pow = (int) (Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 
         // case 1 : 중점이 같으면서 반지름도 같은 경우
         if (x1 == x2 && y1 == y2 && r1 == r2) {
